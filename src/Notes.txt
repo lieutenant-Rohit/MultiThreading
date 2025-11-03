@@ -1,0 +1,37 @@
+1. What is a process ?
+Ans ----> A process is an independent program that is being executed by the operating system.
+Each process:
+	•	Has its own memory space (RAM allocation).
+	•	Has its own data, variables, stack, and system resources (like file handles, network connections).
+	•	Is isolated — one process cannot directly access another process’s memory.
+
+-----------------------------------------------------------------------------------------------
+2. What is a thread?
+Ans -----> A thread is a smaller unit of execution inside a process. It’s often called a lightweight process.
+Each thread has:
+	•	Its own stack memory (for method calls, local variables).
+	•	Its own program counter (keeps track of which line of code is being executed).
+	•	Its own registers.
+
+But all threads share:
+	•	The heap memory (objects, static variables, etc.)
+	•	The code section of the program.
+
+That’s why threads can communicate easily (shared data) — but that’s also why race conditions can occur if you’re not careful!
+
+EXAMPLE ---->
+Imagine your computer is a restaurant (the process).
+	•	The restaurant (process) has shared resources like kitchen, tables, and menu (shared memory).
+	•	Each waiter (thread) serves different customers simultaneously.
+	•	All waiters (threads) share the same space and resources, but each handles their own task independently.
+
+So, multiple waiters can serve multiple tables at once — that’s multithreading.
+
+---------------------------------------------------------------------------------------------------
+3. Creating a Process in Java.
+Ans ----> To create a process we use ProcessBuilder Class .
+Syntax - ProcessBuilder pb = new ProcessBuilder("java", "ChildProgram");
+Explanation - The argument tell -> Run the java command and execute the child program.
+This line is basically typing " java ChildProgram " in terminal.
+
+Process process = pb.start();  ----> It tells the operating system to actually start the new process you described in ProcessBuilder.
