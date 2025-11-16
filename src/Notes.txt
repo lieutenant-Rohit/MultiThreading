@@ -35,3 +35,12 @@ Explanation - The argument tell -> Run the java command and execute the child pr
 This line is basically typing " java ChildProgram " in terminal.
 
 Process process = pb.start();  ----> It tells the operating system to actually start the new process you described in ProcessBuilder.
+------------------------------------------------------------------------------------------------------
+4. Creating a Thread.
+Ans ---->
+Java gives you two main ways to create threads:
+           	1.	Extend the Thread class
+           	2.	Implement the Runnable interface
+
+Case 1 -> Extend the Thread Class -> Refer to the Program in the Thread Package.
+Case 2 -> Implement the Runnable interface -> Refer to the Program in the Thread Package.

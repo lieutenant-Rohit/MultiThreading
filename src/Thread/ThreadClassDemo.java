@@ -7,7 +7,7 @@ public class ThreadClassDemo extends Thread {
         for (int i = 1; i <= 5; i++) {
             System.out.println(Thread.currentThread().getName() + " → Count: " + i);
             try {
-                Thread.sleep(500); // pause 0.5 seconds
+                Thread.sleep(10000); // pause 0.5 seconds
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -36,4 +36,13 @@ public class ThreadClassDemo extends Thread {
 main is your main thread.
 	•	t1 and t2 are child threads running simultaneously.
 	•	The order of execution changes each time — that’s the JVM’s thread scheduler deciding who runs next.
+ */
+
+/*
+Why is count not being affected by the threads?
+Ans-> Each thread (t1 and t2) has its own local variable i — declared inside its own run() method.
+
+So, both threads run the same loop, but each loop uses its own private copy of i.
+
+That’s why count (or i) isn’t shared or “affected” across threads.
  */
